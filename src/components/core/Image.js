@@ -9,13 +9,3 @@ export const Image = styled.Image`
   ${props => props.height && `height:${props.height}px`};
   ${props => props.width && `width:${props.width}px`};
 `;
-
-// Image.propTypes = {
-//   margin: PropTypes.string,
-//   marginTop: PropTypes.number,
-//   marginRight: PropTypes.number,
-//   marginBottom: PropTypes.number,
-//   marginLeft: PropTypes.number,
-//   height: PropTypes.number,
-//   width: PropTypes.number,
-// };

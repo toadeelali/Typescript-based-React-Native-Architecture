@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { RNCamera } from 'react-native-camera';
-import { Page, SafeAreaView, Button } from 'components/core/';
+import { SafeAreaView, Button } from 'components/core/';
 
-const Camera = () => {
+const Camera = ({ callback }) => {
   const ref = useRef();
   const [takingPic, setTakingPic] = useState(false);
 
@@ -19,14 +19,12 @@ const Camera = () => {
 
       try {
         const data = await ref.current.takePictureAsync(options);
-        console.log('Success', JSON.stringify(data));
+        setTakingPic(false);
+        if (callback) callback(data);
       } catch (err) {
         console.log('Error', 'Failed to take picture: ' + (err.message || err));
-        return;
-      } finally {
         setTakingPic(false);
       }
-
     }
   };
 
@@ -46,7 +44,7 @@ const Camera = () => {
           buttonNegative: 'Cancel',
         }}
       />
-      <Button title='take' onPress={takePicture} />
+      <Button title='Take Picture' onPress={takePicture} />
     </SafeAreaView >
   );
 };

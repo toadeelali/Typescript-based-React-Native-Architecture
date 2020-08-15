@@ -1,7 +1,5 @@
 import styled from "styled-components/native";
-import PropTypes from 'prop-types';
 
-// ${props => props["letter-spacing"] && `letter-spacing:${props["letter-spacing"]}`};
 export const Text = styled.Text`
   ${props => props.fontFamily && `font-family:${props.fontFamily}`};
   ${props => props.fontWeight && `font-weight:${props.fontWeight}`};
@@ -21,27 +19,6 @@ export const Text = styled.Text`
   ${props => props.marginBottom && `margin-bottom:${props.marginBottom}px`};
   ${props => props.marginLeft && `margin-left:${props.marginLeft}px`};
 `;
-
-Text.propTypes = {
-  fontFamily: PropTypes.string,
-  fontWeight: PropTypes.number,
-  fontSize: PropTypes.number,
-  lineHeight: PropTypes.number,
-  textAlignVertical: PropTypes.string,
-  color: PropTypes.string,
-  textAlign: PropTypes.string,
-  padding: PropTypes.string,
-  paddingTop: PropTypes.number,
-  paddingRight: PropTypes.number,
-  paddingBottom: PropTypes.number,
-  paddingLeft: PropTypes.number,
-  margin: PropTypes.string,
-  marginTop: PropTypes.number,
-  marginRight: PropTypes.number,
-  marginBottom: PropTypes.number,
-  marginLeft: PropTypes.number,
-};
-
 
 export const H1 = styled(Text)`
   font-family: ${props => props.theme.fontFamily.Bold.Type};

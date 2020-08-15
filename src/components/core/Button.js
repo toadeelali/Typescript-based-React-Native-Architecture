@@ -1,7 +1,6 @@
 import React from 'react';
 import { TouchableNativeFeedback, Platform } from "react-native"
 import styled from "styled-components/native";
-import PropTypes from 'prop-types';
 
 import { Row } from "./View"
 import { Text } from "./Text"
@@ -9,7 +8,6 @@ import { Image } from "./Image"
 
 export const Button = (props) => {
   const { onPress, title, source, ...style } = props;
-
   return (
     <ButtonContainer>
       <TouchableNativeFeedback onPress={onPress} background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : ''}>
@@ -22,25 +20,6 @@ export const Button = (props) => {
       </TouchableNativeFeedback>
     </ButtonContainer>)
 }
-
-Button.propTypes = {
-  title: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
-  source: PropTypes.number,
-  margin: PropTypes.string,
-  marginTop: PropTypes.number,
-  marginRight: PropTypes.number,
-  marginBottom: PropTypes.number,
-  marginLeft: PropTypes.number,
-  height: PropTypes.number,
-  width: PropTypes.number,
-  background: PropTypes.string,
-  justifyContent: PropTypes.string,
-  alignItems: PropTypes.string,
-  textAlignVertical: PropTypes.string,
-  textAlign: PropTypes.string,
-  color: PropTypes.string,
-};
 
 export const TextButton = styled(Button)`
   paddingLeft:3px;
@@ -97,7 +76,6 @@ const ButtonTextLayer = styled(Text)`
   ${props => props.textAlign && `text-align:${props.textAlign}`};
 
   color: ${props => props.color || props.theme.colorCommon.white};  
-
   font-family: ${props => props.theme.fontFamily.SemiBold.Type};
   font-weight: ${props => props.theme.fontFamily.SemiBold.Weight};
   font-Size: ${props => props.theme.fontSize.body}px;

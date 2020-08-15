@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView} from 'react-native';
+import { ScrollView } from 'react-native';
 import { version } from '../../../package.json';
 import { BodyMedium, Button, Page, SafeAreaView, Paper } from 'components/core/';
 
@@ -25,16 +25,14 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <SafeAreaView>
-          <Page>
-            <ScrollView contentInsetAdjustmentBehavior="automatic">
-              <Paper>
-                <BodyMedium>An error occurred v{version}</BodyMedium>
-                <Button title="Restart" onPress={this.restartApp} />
-              </Paper>
-            </ScrollView>
-          </Page>
-        </SafeAreaView>
+        <Page>
+          <ScrollView contentInsetAdjustmentBehavior="automatic">
+            <Paper>
+              <BodyMedium>An error occurred v{version}</BodyMedium>
+              <Button title="Restart" onPress={this.restartApp} />
+            </Paper>
+          </ScrollView>
+        </Page>
       );
     }
 

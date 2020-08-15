@@ -4,6 +4,7 @@ export const createAction = (type) => {
     payload,
     error: payload instanceof Error,
   });
+  
   actionCreator.toString = () => type;
 
   return actionCreator;

@@ -1,8 +1,11 @@
-export const SET_THEME = 'SET_THEME';
-export const RESET_THEME = 'RESET_THEME';
+const LIGHT: number = 0;
+const DARK: number = 1;
+export const SET_THEME: string = 'SET_THEME';
+export const RESET_THEME: string = 'RESET_THEME';
+
 export const SUPPORTED_THEMES = {
-  LIGHT: 0,
-  DARK: 1,
+  LIGHT,
+  DARK,
 };
 
 interface Set {

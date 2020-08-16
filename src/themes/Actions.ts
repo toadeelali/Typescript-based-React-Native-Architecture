@@ -1,9 +1,9 @@
 import { createAction } from 'services/state/utils';
 import { ThemeActionTypes, SET_THEME, SUPPORTED_THEMES } from './types';
-import Colors from './Colors';
-import Metrics from './Metrics';
-import Images from './Images';
-import Typography from './Typography';
+import Colors from './colors';
+import Metrics from './metrics';
+import Images from './images';
+import Typography from './typography';
 
 const dark = { ...Colors.dark, Images, ...Metrics, ...Typography, key: SUPPORTED_THEMES.DARK };
 const light = { ...Colors.light, Images, ...Metrics, ...Typography, key: SUPPORTED_THEMES.LIGHT };

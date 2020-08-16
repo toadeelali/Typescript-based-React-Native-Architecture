@@ -1,3 +1,3 @@
 export * from './types';
-export { default as themeActions } from './Actions';
-export { default as themeReducer } from './Reducer';
+export { default as themeActions } from './actions';
+export { default as themeReducer } from './reducer';

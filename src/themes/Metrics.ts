@@ -25,12 +25,6 @@ const metrics = {
     xl: 50,
     xxl: 72,
   },
-  Images: {
-    small: 20,
-    medium: 40,
-    large: 60,
-    logo: 200,
-  },
   Space: {
     no:0,
     xs: 4,

@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 import { createAction } from './utils';
-import Theme from 'themes/Reducer';
+import { themeReducer } from 'themes';
+
 export const resetGlobal = createAction('global/reset');
 const reducers = combineReducers({
-  Theme,
+  theme: themeReducer,
 });
 
 const rootReducer = (state = {}, action) => {

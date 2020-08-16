@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { useDispatch } from 'react-redux';
 
 import { BodySemiBold, Button, Page } from 'components/core/';
-import ThemeActions from 'themes/Actions';
+import {themeActions, SUPPORTED_THEMES} from 'themes';
 
 
 export default function CameraScreen({ navigation }) {
   const dispatch = useDispatch();
+  const themeContext = useContext(ThemeContext);
   return (
     <Page>
       <BodySemiBold>Camera control tutorial</BodySemiBold>
@@ -14,7 +16,7 @@ export default function CameraScreen({ navigation }) {
 
       <BodySemiBold>Theme control tutorial</BodySemiBold>
       <Button title="Dark" onPress={() => {
-        dispatch(ThemeActions.SetDark());
+        dispatch(themeContext.key === SUPPORTED_THEMES.LIGHT ? themeActions.setDark() : themeActions.setLight());
       }} />
     </Page>
   );

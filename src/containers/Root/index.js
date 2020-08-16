@@ -4,17 +4,17 @@ import { ThemeProvider } from 'styled-components/native';
 
 import { SafeAreaView } from 'components/core/';
 import ErrorBoundary from 'containers/ErrorBoundary';
-import themes from 'themes';
+import { themeActions } from 'themes';
 import RootNavigator from './RootNavigator';
 
 const MainStackNav = () => {
-  const { theme } = useSelector(state => state.Theme);
+  const { current } = useSelector(state => state.theme);
   useEffect(() => {
-    console.log(themes.getTheme(theme));
-  }, [theme]);
+    console.log(themeActions.get(current));
+  }, [current]);
 
   return (
-    <ThemeProvider theme={themes.getTheme(theme)}>
+    <ThemeProvider theme={themeActions.get(current)}>
       <SafeAreaView>
         <ErrorBoundary>
           <RootNavigator />

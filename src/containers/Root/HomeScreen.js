@@ -14,6 +14,9 @@ export default function CameraScreen({ navigation }) {
       <BodySemiBold>Camera control tutorial</BodySemiBold>
       <Button title="Camera" onPress={() => navigation.navigate('CameraScreen')} />
 
+      <BodySemiBold>Chart control tutorial</BodySemiBold>
+      <Button title="Chart" onPress={() => navigation.navigate('CameraScreen')} />
+
       <BodySemiBold>Theme control tutorial</BodySemiBold>
       <Button title="Dark" onPress={() => {
         dispatch(themeContext.key === SUPPORTED_THEMES.LIGHT ? themeActions.setDark() : themeActions.setLight());

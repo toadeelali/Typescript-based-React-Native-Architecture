@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "tslint -p . -t stylish",
-    "prettier:write": "prettier --write **/*.{ts,tsx,js,json}"
+    "prettier:write": "prettier --write **/*.{ts,tsx,js,jsx,json}"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
@@ -20,11 +20,14 @@
     "axios": "^0.19.2",
     "react": "16.13.1",
     "react-native": "0.63.2",
-    "react-native-camera": "^3.36.0",
+    "react-native-chart-kit": "^6.6.1",
     "react-native-gesture-handler": "^1.7.0",
+    "react-native-pure-chart": "0.0.24",
     "react-native-reanimated": "^1.11.0",
     "react-native-safe-area-context": "^3.1.4",
     "react-native-screens": "^2.10.1",
+    "react-native-svg": "^12.1.0",
+    "react-native-svg-charts": "^5.4.0",
     "react-native-tab-view": "^2.15.1",
     "react-native-vector-icons": "^7.0.0",
     "react-redux": "^7.2.1",
@@ -65,11 +68,6 @@
     "tslint-react-recommended": "^1.0.15",
     "tslint-config-airbnb": "^5.11.2",
     "typescript": "^3.8.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run lint"
-    }
   },
   "jest": {
     "preset": "react-native",
